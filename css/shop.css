@@ -1,3 +1,4 @@
+/*! CSS Used from: https://trail-blaze.github.io/css/shop.css */
 * {
   box-sizing: border-box;
 }
@@ -18,7 +19,6 @@ a {
   vertical-align: text-top;
   fill: currentColor;
 }
-
 .tag {
   position: relative;
   background: rgb(12, 165, 12);
@@ -28,7 +28,6 @@ a {
   text-transform: uppercase;
   bottom: 0.5vw;
 }
-
 body {
   margin: 0;
   background: var(--color-body-primary);
@@ -39,7 +38,6 @@ details {
 summary {
   display: list-item;
 }
-
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -47,7 +45,6 @@ h1 {
 img {
   border-style: none;
 }
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
@@ -79,7 +76,6 @@ ul {
   height: 1px;
   background: black;
 }
-
 .radio--hover-gray:hover {
   background-color: #e0e0e0;
 }
@@ -145,7 +141,7 @@ ul {
 .btn:focus {
   border-color: 1px solid black;
   outline: none;
-  box-shadow: 0 0 1px 1px var(--color-body-primary) /*rgba(0, 0, 0, 0.397)*/,
+  box-shadow: 0 0 1px 1px var(--color-body-primary),
     0 0 3px 4px rgb(75, 226, 100);
 }
 .btn-primary {
@@ -178,9 +174,6 @@ ul {
   margin-right: auto;
   margin-left: auto;
   max-width: 1012px;
-}
-.rounded-0 {
-  border-radius: 0 !important;
 }
 .color-text-primary {
   color: var(--color-text-primary) !important;
@@ -218,12 +211,6 @@ ul {
 .position-relative {
   position: relative !important;
 }
-.mt-0 {
-  margin-top: 0 !important;
-}
-.mr-1 {
-  margin-right: 4px !important;
-}
 .mr-3 {
   margin-right: 16px !important;
 }
@@ -233,12 +220,8 @@ ul {
 .mb-4 {
   margin-bottom: 24px !important;
 }
-
 .mr-md-4 {
   margin-right: 24px !important;
-}
-.p-0 {
-  padding: 0 !important;
 }
 .p-3 {
   padding: 16px !important;
@@ -249,7 +232,6 @@ ul {
 .h2 {
   font-size: 24px !important;
 }
-
 .h2 {
   font-weight: 600 !important;
 }
@@ -265,13 +247,9 @@ ul {
 .list-style-none {
   list-style: none !important;
 }
-.d-block {
-  display: block !important;
-}
 .d-flex {
   display: flex !important;
 }
-
 .avatar {
   display: inline-block;
   overflow: hidden;
@@ -335,7 +313,4 @@ ul {
   top: -14px;
   right: 10px;
   left: auto;
-}
-.Box-row:first-of-type {
-  border-top-color: transparent;
 }
