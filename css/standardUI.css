@@ -113,6 +113,7 @@ th {
 }
 
 .settings-header {
+  text-transform: capitalize;
   font-weight: 200;
   font-size: 2vw;
   padding-bottom: 0.5vh;
