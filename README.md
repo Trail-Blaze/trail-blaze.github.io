@@ -1,7 +1,7 @@
 # trail-blaze.github.io
 The Trail Blaze Website
 
-**All content and images used on this site are owned or licened by BlazeOrg or its parent company ("Bluefire Incorporated") for use on this site and licensed products only. Unauthorized use is prohibited.**
+**All content and images used on this site are owned or licensed by BlazeOrg or its parent company ("Bluefire Incorporated") for use on this site and licensed products only. Unauthorized use is prohibited.**
 
 Names of Blaze products and services are trademarks of BlueFire Incorporated or its subsidiaries.
 
