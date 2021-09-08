@@ -87,7 +87,7 @@ nav {
 .logo-disc {
   font-size: 1.5vw;
   padding-left: 1.5vh;
-  font-weight: SemiBold;
+  font-weight: ExtraBold;
   color: #494949;
 }
 
@@ -124,7 +124,7 @@ a {
   text-align: center;
   color: #8f8f8f;
   font-family: "ManRope";
-  font-weight: SemiBold;
+  font-weight: ExtraBold;
   font-size: 12vw;
 }
 .hero-caption {
@@ -140,7 +140,7 @@ a {
   border-radius: 1.2vw;
   color: #fffaff;
   font-family: "ManRope";
-  font-weight: Semibold;
+  font-weight: Extrabold;
   font-size: 2.1vh;
   background: linear-gradient(30deg, #FF2B05, #CC2204);
 }
