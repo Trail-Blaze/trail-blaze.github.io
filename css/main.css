@@ -28,37 +28,37 @@ along with this program.  If not, see http://www.gnu.org/licenses/old-licenses/g
 }
 
 @font-face {
-  font-family: "ManRope";
+  font-family: "ManRopeBold";
   src: url("/res/Manrope-Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: "ManRope";
+  font-family: "ManRopeSuperBold";
   src: url("/res/Manrope-ExtraBold.woff") format("woff");
 }
 
 @font-face {
-  font-family: "ManRope";
+  font-family: "ManRopeSuperLight";
   src: url("/res/Manrope-ExtraLight.woff") format("woff");
 }
 
 @font-face {
-  font-family: "ManRope";
+  font-family: "ManRopeLight";
   src: url("/res/Manrope-Light.woff") format("woff");
 }
 
 @font-face {
-  font-family: "ManRope";
+  font-family: "ManRopeMedium";
   src: url("/res/Manrope-Medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: "ManRope";
+  font-family: "ManRopeRegular";
   src: url("/res/Manrope-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: "ManRope";
+  font-family: "ManRopeSemi";
   src: url("/res/Manrope-SemiBold.woff") format("woff");
 }
 
@@ -81,7 +81,7 @@ header {
 
 nav {
   flex: 2;
-  font-family: "ManRope";
+  font-family: "ManRopeRegular";
 }
 
 .logo-disc {
@@ -123,8 +123,7 @@ a {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #8f8f8f;
-  font-family: "ManRope";
-  font-weight: ExtraBold;
+  font-family: "ManRopeSuperBold";
   font-size: 12vw;
 }
 .hero-caption {
@@ -139,7 +138,7 @@ a {
   border: 0;
   border-radius: 1.2vw;
   color: #fffaff;
-  font-family: "ManRope";
+  font-family: "ManRopeRegular";
   font-weight: Extrabold;
   font-size: 2.1vh;
   background: linear-gradient(30deg, #FF2B05, #CC2204);
