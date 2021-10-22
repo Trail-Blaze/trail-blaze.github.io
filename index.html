@@ -338,5 +338,29 @@ along with this program.  If not, see http://www.gnu.org/licenses/old-licenses/g
         </div>
       </div>
     </div>
+          <iframe id="discord_popup" src="https://discord.com/widget?id=812391102224269333&amp;theme=dark" width="275" height="400" title="Discord Widget" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" style="display: block; position: absolute; top: 90%; left: 85%; transition: all 0.5s ease-in-out 0.3s;"></iframe>
+  </body>
+<script defer>
+
+// If popup is clicked, show it on the screen
+
+  document.getElementById("discord_popup").addEventListener("click", function( event ) {
+  document.getElementById("discord_popup").style.top = "60%"
+  , false});
+
+  // If popup is hovered, show it on the screen
+
+const isHover = e => e.parentElement.querySelector(':hover') === e;    
+
+const discord_popup = document.getElementById("discord_popup");
+document.addEventListener('mousemove', function checkHover() {
+  const hovered = isHover(discord_popup);
+  if (hovered !== checkHover.hovered) {
+   // console.log(hovered ? 'hovered' : 'not hovered');
+hovered? discord_popup.style.top = "60%" : discord_popup.style.top = "90%";
+    checkHover.hovered = hovered;
+  }
+});
+      </script>
   </body>
 </html>
