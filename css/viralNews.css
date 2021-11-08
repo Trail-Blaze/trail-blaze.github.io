@@ -1716,8 +1716,8 @@ video {
    display: none;
 }
 
-@media only screen and (max-width: 481px) {
-#discord_popup{
+@media only screen and (max-width: 770px) {
+iframe#discord_popup{
     display: none;
 }
 }
