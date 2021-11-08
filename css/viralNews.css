@@ -1715,3 +1715,9 @@ video {
 .readmore {
    display: none;
 }
+
+@media only screen and (max-width: 481px) {
+#discord_popup{
+    display: none;
+}
+}
