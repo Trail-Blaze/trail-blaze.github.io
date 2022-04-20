@@ -119,7 +119,7 @@
          //on keyup, start the countdown
          input__.addEventListener("keyup", function () {
             clearTimeout(typingTimer);
-            typingTimer = setTimeout(submitForm(form__), doneTypingInterval);
+            typingTimer = setTimeout(()=>{submitForm(form__)}, doneTypingInterval);
          });
 
          //on keydown, clear the countdown
