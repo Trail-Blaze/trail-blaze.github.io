@@ -6,7 +6,7 @@
          *:focus {
             outline: none;
          }
-         
+
          body {
             background-color: rgb(35, 39, 42);
             color: #fcfcfc;
@@ -93,7 +93,7 @@
    <body>
       <div id="skids">
          <h2 class="arial">Blaze Credits</h2>
-         <form onkeyup="submitForm(this)">
+         <form id="form__">
             <input
                id="SkidFilter"
                type="text"
@@ -107,9 +107,22 @@
       </div>
 
       <script defer>
-         setInterval(function () {
-            document.getElementById("SkidFilter").focus();
-         }, 100);
+         //setup before functions
+         let typingTimer; //timer identifier
+         const doneTypingInterval = 5000; //time in ms, 5 seconds for example
+         const form__ = document.getElementById("form__");
+
+         //on keyup, start the countdown
+         form__.on("keyup", function () {
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(submitForm(form__), doneTypingInterval);
+         });
+
+         //on keydown, clear the countdown
+         form__.on("keydown", function () {
+            clearTimeout(typingTimer);
+         });
+
          function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
             var vars = query.split("&");
