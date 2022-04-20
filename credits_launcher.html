@@ -111,15 +111,16 @@
          let typingTimer; //timer identifier
          const doneTypingInterval = 5000; //time in ms, 5 seconds for example
          const form__ = document.getElementById("form__");
+         const input__ = document.getElementById("SkidFilter");
 
          //on keyup, start the countdown
-         form__.on("keyup", function () {
+         input__.on("keyup", function () {
             clearTimeout(typingTimer);
             typingTimer = setTimeout(submitForm(form__), doneTypingInterval);
          });
 
          //on keydown, clear the countdown
-         form__.on("keydown", function () {
+         input__.on("keydown", function () {
             clearTimeout(typingTimer);
          });
 
