@@ -107,6 +107,9 @@
       </div>
 
       <script defer>
+         document.onload = function() {
+         document.getElementById("SkidFilter").focus();
+         };
          //setup before functions
          let typingTimer; //timer identifier
          let doneTypingInterval = 5000; //time in ms, 5 seconds for example
