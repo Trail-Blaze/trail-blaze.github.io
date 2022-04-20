@@ -146,7 +146,8 @@
                skidprofile.id = element.uid;
                var SkidPFP = document.createElement("img");
                if (element.avatar != null) {
-                  SkidPFP.src = `https://cdn.discordapp.com/avatars/${element.uid}/${element.avatar}.png?size=128`;
+                  // SkidPFP.src = `https://cdn.discordapp.com/avatars/${element.uid}/${element.avatar}.png?size=128`; // Discord
+                  SkidPFP.src = `https://avatars.githubusercontent.com/${element.avatar}`; // Github (We're using this)
                } else {
                   SkidPFP.src =
                      "https://cdn.discordapp.com/attachments/789297675790974996/819701180203794432/dd4dbc0016779df1378e7812eabaa04d.png?size=128";
