@@ -1,0 +1,274 @@
+<html style="text-align: center; font-family: Arial, Helvetica, sans-serif">
+   <head>
+      <!-- Primary Meta Tags -->
+      <title>Blaze | Credits</title>
+      <style>
+         *:focus {
+            outline: none;
+         }
+         
+         body {
+            background-color: rgb(35, 39, 42);
+            color: #fcfcfc;
+         }
+
+         a {
+            color: #9bff98;
+            text-decoration: none;
+         }
+         a:hover {
+            color: #9bff98d2;
+            text-decoration: none;
+         }
+
+         input[type="text"]:focus {
+            border: 2px solid #0095ff;
+            border-radius: 18px;
+            background: #ffffff;
+            height: 50px;
+            width: 1000px;
+         }
+         input[type="text"] {
+            border: 0;
+            border-radius: 5px;
+            padding-left: 20px;
+            padding-right: 10px;
+            background: #ffffff;
+            height: 50px;
+            width: 50px;
+            color: #707979;
+            font-size: 30px;
+         }
+
+         .pepega {
+            background-color: rgb(44, 47, 51);
+            border: none;
+            color: white;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 19px;
+            margin: 9px 15px;
+            border-radius: 4px;
+         }
+
+         .pepega__result {
+            background-color: rgb(44, 47, 51);
+            border: none;
+            color: white;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 19px;
+            margin: 9px 15px;
+            border-radius: 4px;
+         }
+
+         SkidUserName {
+            font-family: Arial, Helvetica, sans-serif;
+         }
+
+         p {
+            font-family: Arial, Helvetica, sans-serif;
+         }
+
+         .arial {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3rem;
+         }
+
+         img {
+            max-width: 128px;
+            background-color: rgba(130, 130, 130, 0.6);
+            max-height: 128px;
+            height: 128px;
+            width: 128px;
+            border-radius: 50%;
+         }
+      </style>
+   </head>
+
+   <body>
+      <div id="skids">
+         <h2 class="arial">Blaze Credits</h2>
+         <p><a href="https://trail-blaze.github.io">Go Back</a> at any time</p>
+         <form onkeyup="submitForm(this)">
+            <input
+               id="SkidFilter"
+               type="text"
+               name="contrib"
+               placeholder="Type to search by name"
+            />
+            <!-- button type="submit">Go</button -->
+            <!-- input id="ShowIdthing" type="checkbox" name="ShowId">ShowId</input -->
+         </form>
+         <noscript>You need to enable JavaScript to run this page.</noscript>
+      </div>
+
+      <script defer>
+         setInterval(function () {
+            document.getElementById("SkidFilter").focus();
+         }, 100);
+         function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+               var pair = vars[i].split("=");
+               if (decodeURIComponent(pair[0]) == variable) {
+                  return decodeURIComponent(pair[1]);
+               }
+            }
+            console.log("Query variable %s not found", variable);
+         }
+
+         function MakeSkids(array) {
+            array.forEach((element) => {
+               var skidprofile = document.createElement("div");
+               skidprofile.classList.add("pepega");
+               skidprofile.id = element.uid;
+               var SkidPFP = document.createElement("img");
+               if (element.avatar != null) {
+                  SkidPFP.src = `https://cdn.discordapp.com/avatars/${element.uid}/${element.avatar}.png?size=128`;
+               } else {
+                  SkidPFP.src =
+                     "https://cdn.discordapp.com/attachments/789297675790974996/819701180203794432/dd4dbc0016779df1378e7812eabaa04d.png?size=128";
+               }
+               SkidPFP.id = `PFP_${element.uid}`;
+               SkidPFP.onerror = function () {
+                  document.getElementById(`PFP_${element.uid}`).src =
+                     "https://cdn.discordapp.com/attachments/789297675790974996/819701180203794432/dd4dbc0016779df1378e7812eabaa04d.png?size=128";
+               };
+               //<img src="img_avatar.png" alt="Avatar" style="width:200px">
+               var skidName = document.createElement("SkidUserName");
+               skidName.innerHTML = `<a href="${element.github}" target="__blank">${element.tag}</a>`;
+               skidprofile.appendChild(SkidPFP);
+               skidprofile.appendChild(document.createElement("br"));
+               skidprofile.appendChild(document.createElement("br"));
+               skidprofile.appendChild(skidName);
+
+               if (getQueryVariable("ShowId")) {
+                  var IdDoc = document.createElement("p");
+                  IdDoc.innerText = "Id:" + element.uid;
+                  skidprofile.appendChild(IdDoc);
+               }
+
+               document.getElementById("skids").appendChild(skidprofile);
+            });
+         }
+
+         if (getQueryVariable("ShowId")) {
+            document.getElementById("ShowIdthing").checked = true;
+         }
+
+         var skidFilter__ =
+            getQueryVariable("contrib") ||
+            getQueryVariable("contribs") ||
+            getQueryVariable("name");
+
+         stat1();
+
+         function stat1() {
+            if (
+               skidFilter__ === null ||
+               skidFilter__ === undefined ||
+               /\s/.test(skidFilter__)
+            ) {
+               stat();
+               return;
+            } else {
+               document.getElementById("SkidFilter").value = skidFilter__;
+               var xhttp = new XMLHttpRequest();
+
+               xhttp.open(
+                  "GET",
+                  "https://raw.githubusercontent.com/trail-blaze/credits/main/credits.json",
+                  false
+               );
+               xhttp.send();
+
+               if (xhttp.readyState == 4 && xhttp.status == 200) {
+                  var FilteredSkids = JSON.parse(xhttp.responseText).filter(
+                     (x) =>
+                        x.tag
+                           .toString()
+                           .toUpperCase()
+                           .includes(skidFilter__.toString().toUpperCase())
+                  );
+                  if (!FilteredSkids[0]) {
+                     var NoResult = document.createElement("p");
+                     NoResult.innerText = "Found No Result.";
+                     document
+                        .getElementById("skids")
+                        .appendChild(document.createElement("br"));
+                     document
+                        .getElementById("skids")
+                        .appendChild(document.createElement("br"));
+
+                     document.getElementById("skids").appendChild(NoResult);
+                  }
+                  MakeSkids(FilteredSkids);
+               } else {
+                  alert(xhttp.status + " " + xhttp.statusText);
+               }
+            }
+            if (getQueryVariable("skidId")) {
+               var xhttp = new XMLHttpRequest();
+
+               xhttp.open(
+                  "GET",
+                  "https://raw.githubusercontent.com/trail-blaze/credits/main/credits.json",
+                  false
+               );
+               xhttp.send();
+
+               if (xhttp.readyState == 4 && xhttp.status == 200) {
+                  var FilteredSkids = JSON.parse(xhttp.responseText).filter(
+                     (x) => x.uid == getQueryVariable("skidId")
+                  );
+                  if (!FilteredSkids[0]) {
+                     var NoResult = document.createElement("p");
+                     NoResult.innerText = "Found no result";
+                     document
+                        .getElementById("skids")
+                        .appendChild(document.createElement("br"));
+                     document
+                        .getElementById("skids")
+                        .appendChild(document.createElement("br"));
+
+                     document.getElementById("skids").appendChild(NoResult);
+                  }
+
+                  MakeSkids(FilteredSkids);
+               } else {
+                  alert(xhttp.status + " " + xhttp.statusText);
+               }
+            }
+         }
+         function stat() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+               if (this.readyState == 4 && this.status == 200) {
+                  MakeSkids(JSON.parse(xhttp.responseText));
+               }
+            };
+
+            xhttp.open(
+               "GET",
+               "https://raw.githubusercontent.com/trail-blaze/credits/main/credits.json",
+               true
+            );
+            xhttp.send();
+         }
+
+         function submitForm(inputForm) {
+            setTimeout(function () {
+               inputForm.submit();
+            }, 550); //wait 550 milliseconds
+         }
+      </script>
+   </body>
+</html>
