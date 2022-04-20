@@ -35,7 +35,7 @@
             height: 4.965vh;
             width: 30vw;
             color: #707979;
-            font-size: 10px;
+            font-size: 18px;
          }
 
          .pepega {
@@ -114,13 +114,13 @@
          const input__ = document.getElementById("SkidFilter");
 
          //on keyup, start the countdown
-         input__.on("keyup", function () {
+         input__.addEventListener("keyup", function () {
             clearTimeout(typingTimer);
             typingTimer = setTimeout(submitForm(form__), doneTypingInterval);
          });
 
          //on keydown, clear the countdown
-         input__.on("keydown", function () {
+         input__.addEventListener("keydown", function () {
             clearTimeout(typingTimer);
          });
 
