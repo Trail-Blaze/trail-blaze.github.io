@@ -18,4 +18,4 @@ setTimeout(() => {
          "ann_container"
       );
    }
-}, 350);
+}, 425);
