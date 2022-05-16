@@ -6,7 +6,7 @@ getHTML(
 setTimeout(() => {
    try {
       if (announcement_type.innerText == "DEFAULT") {
-         ann_container.style.opacity = 0;
+         ann_container.style.opacity = 0.5;
          getHTML(
             "https://raw.githubusercontent.com/Trail-Blaze/marketplace/main/featuredContent/announcements/partials/placeholder.html",
             "ann_container"
@@ -14,7 +14,7 @@ setTimeout(() => {
       }
    } catch (error) {
       console.log(error);
-      ann_container.style.opacity = 0;
+      ann_container.style.opacity = 0.5;
       getHTML(
          "https://raw.githubusercontent.com/Trail-Blaze/marketplace/main/featuredContent/announcements/partials/announcement.html",
          "ann_container"
