@@ -24,4 +24,4 @@ setTimeout(() => {
 
 setTimeout(() => {
    ann_container.style.opacity = 1;
-}, 475);
+}, 825);
