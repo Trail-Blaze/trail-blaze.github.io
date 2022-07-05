@@ -1,5 +1,5 @@
 # trail-blaze.github.io
-The Trail Blaze Website
+The [Trail Blaze](https://trail-blaze.github.io) Website
 
 **All content and images used on this site are owned or licensed by BlazeOrg or its parent company ("Bluefire Incorporated") for use on this site and licensed products only. Unauthorized use is prohibited.**
 
