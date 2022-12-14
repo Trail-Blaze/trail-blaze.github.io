@@ -284,19 +284,25 @@ along with this program.  If not, see http://www.gnu.org/licenses/old-licenses/g
                                     </h1>
                                     <br />
 
-                                    A Fortnite private server changes the Epic
-                                    Games' API Host to another host and the
-                                    edited host will be send customized data
-                                    back to the client. Here is an example below
-                                    (note that the enpoints and code are
+                                    A Fortnite private server is essentially a proxy.
+                                    It works by injecting a DLL into the client that exploits a bug in it.
+                                    This allows the DLL to change the default, Epic
+                                    Games' API host to another host. This "new" host
+                                    host will send customized data
+                                    back to the client on every server request. 
+                                    Here is an example below of how this works
+                                    (note that the endpoints and code are
                                     fictitious):
                                     <code>
-                                       # not edited (GET)
-                                       api.epicgame.com/ACCOUNT-ID/get-skins:
-                                       return => "real skins of the player" #
-                                       edited (GET)
-                                       api.epicgame.com/ACCOUNT-ID/get-skins:
+                                       <br/><br/>
+                                       # original response (GET)
+                                       api.epicgames.com/ACCOUNT-ID/get-skins:
+                                       return => "real skins of the player" 
+                                       <br/>
+                                       # edited response (GET)
+                                       api.epicgames.com/ACCOUNT-ID/get-skins:
                                        return => "all skins"
+                                       <br/><br/>
                                     </code>
                                     <h1
                                        class="post-title entry-title"
